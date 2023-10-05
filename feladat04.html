@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Stringfüggvények</title>
-</head>
-<body>
-    
-    <div>
-    <input type="text" id="szoveg" placeholder="Ide írj szöveget">
-    
-</div>
-<div>
-    <input type="radio" id="kisbetus" name="milyenre">
-    <label for="kisbetus">Kisbetűs</label>
-    <input type="radio" id="nagybetus" name="milyenre">
-    <label for="nagybetus">Nagybetűs</label>
-</div>
-<div>
-    <br>
-<button id="atalakit">Átalakít</button>
-</div>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Stringfüggvények</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", initialize);              
+            
+
+            function initialize() {
+                const atalakit_gomb = document.getElementById('atalakit');
+                //console.log(atalakit_gomb);ú
+                atalakit_gomb.addEventListener("click", () => {
+                    const szoveg = document.getElementById("szoveg").value;
+                    const kisbetus = document.getElementById("kisbetus").checked;
+                    const nagybetus = document.getElementById("nagybetus").checked;
+                    const kimenet = document.getElementById("kimenet");
+                    if (kisbetus) {
+                        kimenet.innerHTML = kisbetusse(szoveg);
+
+                } else if (nagybetus) {
+                    kimenet.innerHTML = nagybetusse(szoveg);
+                }
+            })
+            
+                
+            };
+           
+            
+            const kisbetusse = szoveg => {return szoveg.toLowerCase();}
+            const nagybetusse = szoveg => {return szoveg.toUpperCase();}
+        </script>
+    </head>
+
+    <body>
+
+        <div>
+            <input type="text" id="szoveg" placeholder="Ide írj szöveget">
+
+        </div>
+        <div>
+            <input type="radio" id="kisbetus" name="milyenre">
+            <label for="kisbetus">Kisbetűs</label>
+            <input type="radio" id="nagybetus" name="milyenre">
+            <label for="nagybetus">Nagybetűs</label>
+        </div>
+        <div>
+            <br>
+            <button id="atalakit">Átalakít</button>
+        </div>
+        <p id="kimenet"></p>
+    </body>
+
 </html>
