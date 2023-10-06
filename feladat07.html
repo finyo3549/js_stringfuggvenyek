@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. feladat</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+        function init() {
+            const szoveg_input = document.getElementById("szoveg");
+            const kimenet = document.getElementById("kimenet");
+            const szamol = document.getElementById("szamol");
+            szamol.addEventListener ("click", () => {
+                const szoveg = szoveg_input.value;
+                let szokozok_szama = 0;
+                for(let i = 0; i < szoveg.length; i++){
+                const karakter = szoveg[i];
+                if (karakter == " ") {
+                    szokozok_szama ++;
+                }
+            }
+            kimenet.innerHTML = "A szóközök száma: " + szokozok_szama;
+        }
+            )
+        }
+    </script>
+</head>
+<body>
+    <textarea id="szoveg" cols="30" rows="10" placeholder="Adjon meg egy szöveget..."></textarea>
+    <br>
+    <button id="szamol">Számol</button>
+    <p id="kimenet"></p>
+</body>
+</html>

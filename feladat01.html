@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Feladat</title>
+<script>
+    document.addEventListener("DOMContentLoaded", initialize);
+    function initialize() {
+
+        const gomb = document.getElementById("gomb");
+        
+        gomb.addEventListener("click", () => {
+            const hossz = document.getElementById("hossz");
+            const szoveg = document.getElementById("szoveg").value;
+            
+            hossz.innerHTML = szoveg.length;
+        })
+    }
+</script>
+</head>
+<body>
+<input id="szoveg" placeholder="Írj ide szöveget">
+<div>
+    <button id="gomb">Szóhossz mérés</button>
+</div>    
+<p id="hossz"></p>
+</body>
+</html>
