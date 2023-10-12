@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. feladat</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+        function init() {
+        const str = "";
+        const kimenet = document.getElementById("kimenet");
+        let betuk = "";
+        for (var i = 1;i<=255;i++) {
+            betuk += String.fromCharCode(i);
+        }
+        kimenet.innerHTML = betuk;
+    }
+    </script>
+</head>
+<body>
+    <p id="kimenet"></p>
+</body>
+</html>
