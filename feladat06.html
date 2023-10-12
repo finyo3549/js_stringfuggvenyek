@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Feladat</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", initialize);
+        function initialize() {
+            const gomb=document.getElementById("gomb");
+            const szoveg = document.getElementById("szoveg").value;
+            const szo = document.getElementById("szo").value;
+            gomb.addEventListener("click", () => {
+                const szoveg = document.getElementById("szoveg").value;
+                const szo = document.getElementById("szo").value;
+                if(szoveg.length < 30) {
+                    window.alert("A szöveg rövidebb, mint 30 karakter");
+                }else if (szoveg.indexOf(szo) !== -1) {
+                window.alert("Szerepel az adott szó a keresett szövegben!");
+            } else {window.alert("Nem szerepel")};
+            });
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="textarea" size="50" placeholder="Adj meg egy legalább 30 karakteres szöveget" id="szoveg">
+    <br>
+    <input type="text" id="szo" placeholder="Írd ide a keresendő szót">
+    <button id="gomb">Keres </button>
+</body>
+</html>
