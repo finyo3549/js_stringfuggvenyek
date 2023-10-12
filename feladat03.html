@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Feladat</title>
+    <script>
+        document.addEventListener("DOMContentLoaded" ,initialize);
+        function initialize() {
+            const gomb = document.getElementById("gomb");
+            gomb.addEventListener("click",()=> {
+               const szoveg = document.getElementById("szoveg").value;
+               const kimenet = document.getElementById("kimenet");
+               kimenet.innerHTML = kisbetusse(szoveg);
+               
+            })
+        };
+        const kisbetusse = szoveg => {return szoveg.toLowerCase();}
+    </script>
+</head>
+<body>
+    <input type="text" id="szoveg">
+    <br><button id="gomb">Kisbetűssé alakítás</button>
+    <br>
+    <p id="kimenet"></p>
+</body>
+</html>
